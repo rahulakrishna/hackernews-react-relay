@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import LinkList from './components/LinkList';
+import LinkListPage from './components/LinkListPage';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <LinkList/>
+        <LinkListPage />
       </div>
     );
   }

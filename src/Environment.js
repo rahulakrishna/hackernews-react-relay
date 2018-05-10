@@ -2,7 +2,7 @@ const { Environment, Network, RecordSource, Store } = require('relay-runtime');
 
 const store = new Store(new RecordSource());
 
-const Network = Network.create((operation, variables) => {
+const network = Network.create((operation, variables) => {
   return fetch('https://api.graph.cool/relay/v1/cjgyvtkcy219h0198206z6070', {
     method: 'POST',
     headers: {
