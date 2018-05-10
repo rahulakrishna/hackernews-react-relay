@@ -17,12 +17,13 @@ class LinkListPage extends React.Component {
       <QueryRenderer
         environment = {environment}
         query = {LinkListPageQuery}
-        render = {(error, props) => {
-          if(error) {
-            return <div>{error.message}</div>;
+        render = {(data) => {
+          if(data.error) {
+            return <div>{data.error.message}</div>;
           }
-          else if(props) {
-            return <LinkList viewer = {props.viewer} />;
+          else if(data.props) {
+            console.log('This is what we got in the data as props for the query we just tried to execute: ',data.props)
+            return <div><LinkList viewer={data.props.viewer} /></div>;
           }
           return <div>Loading...</div>;
         }}

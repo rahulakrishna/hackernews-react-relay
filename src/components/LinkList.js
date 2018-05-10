@@ -1,11 +1,16 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
+import Link from './Link';
 
 class LinkList extends React.Component {
   render() {
     return(
       <div>
-        Hello World!
+        {this.props.viewer.allLinks.edges.map(({node}) =>{
+          console.log(node);
+          return <Link key={node.__id} link={node} />
+        }
+        )}
       </div>
     )
   }
